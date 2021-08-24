@@ -31,7 +31,11 @@ yarn add asf-navbar
 > 
 >> 用`import`语句导入'asf-navbar'后在components内添加asf-navbar
 > 
-> >即可在template中写入`<asf-navbar></asf-navbar>`
+>> 即可在template中写入`<asf-navbar></asf-navbar>`
+> 
+>React.js
+> 
+>> 寄了
 ## 环境
 * 使用 [Node.js 14.17.5](http://nodejs.cn/download/current/) 官网**LTS**版本
 

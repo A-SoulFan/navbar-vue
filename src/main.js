@@ -13,7 +13,7 @@ import VueWebComponent from './components/navBar';
 
 const CustomElement = wrap(Vue, VueWebComponent);
 
-window.customElements.define('asfNavbar', CustomElement);
+window.customElements.define('asf-navbar', CustomElement);
 
 new Vue({
     render: h => h(App),

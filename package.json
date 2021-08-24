@@ -1,10 +1,10 @@
 {
-  "name": "asf-navbar",
-  "version": "0.1.7",
+  "name": "asf-navbar-vue",
+  "version": "0.1.1",
   "author": "walker2398",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target wc --name ASF-navbar src/main.js",
+    "build": "vue-cli-service build --target wc --name asf-navbar src/main.js",
     "lint": "vue-cli-service lint",
     "prepare": "husky install"
   },
