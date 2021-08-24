@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <nav-bar happy="ddd"></nav-bar>
+        <nav-bar></nav-bar>
         <div>happy</div>
     </div>
 

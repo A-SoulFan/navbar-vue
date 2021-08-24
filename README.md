@@ -12,9 +12,26 @@
 ## 项目地址
 [https://gitee.com/asoul-fan/asf-navbar](https://gitee.com/asoul-fan/asf-navbar)
 
-##安装
+## 安装
+```bash
+npm install asf-navbar
+```
+或
+```bash
+yarn add asf-navbar
+```
 
-
+## 使用
+>纯HTML:
+>>用`<script>`标签引入项目文件夹中index.js与vue文件夹
+>
+>>即可在html中写入`<asf-navbar></asf-navbar>`
+> 
+>Vue.js:
+> 
+>> 用`import`语句导入'asf-navbar'后在components内添加asf-navbar
+> 
+> >即可在template中写入`<asf-navbar></asf-navbar>`
 ## 环境
 * 使用 [Node.js 14.17.5](http://nodejs.cn/download/current/) 官网**LTS**版本
 
