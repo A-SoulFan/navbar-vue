@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App.vue'
+ import App from './App.vue'
 // import wrap from '@vue/web-component-wrapper';
 // import navBar from "./components/navBar";
 import less from 'less'
@@ -13,7 +13,9 @@ import VueWebComponent from './components/navBar';
 
 const CustomElement = wrap(Vue, VueWebComponent);
 
-window.customElements.define('ASF-navbar', CustomElement);
+window.customElements.define('ASFNavbar', CustomElement);
+
 new Vue({
     render: h => h(App),
 }).$mount('#app')
+
