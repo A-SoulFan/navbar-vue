@@ -12165,7 +12165,7 @@ external_Vue_default.a.config.productionTip = false; // const customElement = wr
 
 
 const CustomElement = vue_wc_wrapper(external_Vue_default.a, navBar);
-window.customElements.define('asfNavbar', CustomElement);
+window.customElements.define('asf-navbar', CustomElement);
 new external_Vue_default.a({
   render: h => h(App)
 }).$mount('#app');
@@ -12180,7 +12180,7 @@ new external_Vue_default.a({
 
 
 
-window.customElements.define('a-s-f-navbar', vue_wc_wrapper(external_Vue_default.a, /* Cannot get final name for export "default" in "./src/main.js?shadow" (known exports: , known reexports: ) */ undefined))
+window.customElements.define('asf-navbar', vue_wc_wrapper(external_Vue_default.a, /* Cannot get final name for export "default" in "./src/main.js?shadow" (known exports: , known reexports: ) */ undefined))
 
 /***/ }),
 
@@ -12307,4 +12307,4 @@ __webpack_require__.r(__webpack_exports__);
 /***/ })
 
 /******/ });
-//# sourceMappingURL=ASF-navbar.js.map
+//# sourceMappingURL=asf-navbar.js.map

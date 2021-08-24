@@ -10,7 +10,7 @@
 >>`yarn lint`
 
 ## 项目地址
-[https://gitee.com/asoul-fan/asf-navbar](https://gitee.com/asoul-fan/asf-navbar)
+[https://gitee.com/asoul-fan/asf-navbar-vue](https://gitee.com/asoul-fan/asf-navbar)
 
 ## 安装
 ```bash
