@@ -12165,7 +12165,7 @@ external_Vue_default.a.config.productionTip = false; // const customElement = wr
 
 
 const CustomElement = vue_wc_wrapper(external_Vue_default.a, navBar);
-window.customElements.define('ASF-navbar', CustomElement);
+window.customElements.define('ASFNavbar', CustomElement);
 new external_Vue_default.a({
   render: h => h(App)
 }).$mount('#app');
