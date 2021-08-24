@@ -1,17 +1,21 @@
 {
-  "name": "asf-navbar-vue",
-  "version": "0.1.0",
-  "private": true,
+  "name": "asf-navbar",
+  "version": "0.1.2",
+  "author": "walker2398",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "vue-cli-service build --target wc --name asf-navbar src/components/navBar.vue",
+    "lint": "vue-cli-service lint",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "core-js": "^3.6.5",
+    "husky": "^7.0.1",
+    "less": "^4.1.1",
+    "less-loader": "^7.3.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
@@ -38,5 +42,10 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "asf网站导航栏",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitee.com/asoul-fan/asf-navbar.git"
+  }
 }
