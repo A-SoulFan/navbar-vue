@@ -1,6 +1,6 @@
 {
   "name": "asf-navbar-vue",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "walker2398",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -47,6 +47,6 @@
   "description": "asf网站导航栏",
   "repository": {
     "type": "git",
-    "url": "git+https://gitee.com/asoul-fan/asf-navbar.git"
+    "url": "git+https://gitee.com/asoul-fan/asf-navbar-vue.git"
   }
 }
