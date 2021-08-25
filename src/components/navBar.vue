@@ -10,24 +10,49 @@
                 <span></span>
             </div>
             <div id="navBarButtons">
-                <div class="navBarButtonWrapper">
-                    <img class="navBarButton" src="../assets/search.svg" alt="search"/>
+                <div id="navBarSearchWrapper" class="navBarButtonWrapper">
+                    <img id="navBarSearch" class="navBarButton" src="../assets/search.svg" alt="search"/>
                 </div>
                 <div class="navBarButtonWrapper">
                     <img class="navBarButton" src="../assets/user.svg" alt="user"/>
                 </div>
-                <div id="navBarMobileMenuWrapper" class="navBarButtonWrapper">
+                <div :style="navBarMobileMenuBGStyle" @touchstart="navBarMobileMenuTouched=true"
+                     @touchend="navBarMobileMenuTouched=false"
+                     @click="mobileMenuDisplay = !mobileMenuDisplay" id="navBarMobileMenuWrapper"
+                     class="navBarButtonWrapper">
                     <img id="navBarMobileMenu" class="navBarButton" src="../assets/menu.svg" alt="menu"/>
                 </div>
             </div>
         </div>
+        <mobile-menu v-if="mobileMenuDisplay"></mobile-menu>
     </div>
 </template>
 
 <script>
+import mobileMenu from "@/components/mobileMenu";
+
 export default {
     name: "navBar",
-    props: ['happy']
+    components: {
+        mobileMenu
+    },
+    data() {
+        return {
+            mobileMenuDisplay: false,
+            navBarMobileMenuTouched: false,
+            navBarMobileMenuBGStyle: "background-color:white;"
+        }
+    },
+    watch: {
+        navBarMobileMenuTouched() {
+            if (this.$data.navBarMobileMenuTouched) {
+                this.$data.navBarMobileMenuBGStyle = "background-color:#D1D5DB;"
+            } else {
+                this.$data.navBarMobileMenuBGStyle = "background-color:white;"
+            }
+        }
+    }
+
 }
 </script>
 
@@ -97,12 +122,14 @@ export default {
         @media (max-width: 1000px) {
           height: 40px;
           width: 40px;
+          display: none;
           border-radius: 20px;
         }
 
         &:hover {
           background-color: #D1D5DB;
         }
+
 
         .navBarButton {
           height: 28.8px;
@@ -120,17 +147,39 @@ export default {
           }
         }
 
+        #navBarSearch {
+          height: 28.8px;
+          @media (max-width: 1000px) {
+            height: 19.2px;
+            display: block !important;
+          }
+        }
+
       }
 
-      #navBarMobileMenuWrapper {
-        display: none;
+      .mobileWrapper {
         @media (max-width: 1000px) {
           display: flex;
           justify-content: center;
           align-items: center;
-          margin: 0;
+          margin-left: 5px;
           cursor: pointer;
         }
+      }
+
+      #navBarMobileMenuWrapper {
+        display: none;
+        .mobileWrapper();
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color:rgba(0,0,0,0);
+      }
+
+      #navBarSearchWrapper {
+        display: flex;
+          .mobileWrapper();
       }
     }
 
