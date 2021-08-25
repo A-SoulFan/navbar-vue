@@ -29,7 +29,7 @@ yarn add asf-navbar
 > 
 >Vue.js:
 > 
->> 用`import`语句导入'asf-navbar'后在components内添加asf-navbar
+>> 用`import asfNavbar from 'asf-navbar'`语句导入后在`components`内添加`asfNavbar`
 > 
 >> 即可在template中写入`<asf-navbar></asf-navbar>`
 > 
