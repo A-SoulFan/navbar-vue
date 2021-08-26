@@ -91,6 +91,8 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   background-color: white;
+  z-index: 3;
+  padding-bottom: 20px;
   #personalPart {
     display: flex;
     width: 90%;
