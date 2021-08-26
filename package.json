@@ -1,6 +1,6 @@
 {
   "name": "asf-navbar-vue",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "author": "walker2398",
   "scripts": {
     "serve": "vue-cli-service serve",

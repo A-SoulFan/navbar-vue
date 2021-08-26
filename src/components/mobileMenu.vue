@@ -90,6 +90,7 @@ export default {
   top: 48px;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: white;
   #personalPart {
     display: flex;
     width: 90%;
