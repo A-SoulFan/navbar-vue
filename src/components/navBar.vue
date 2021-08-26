@@ -3,11 +3,9 @@
         <div id="navBarInnerWrapper">
             <img src="../assets/Logo.svg" id="logo" alt="logo"/>
             <div id="navBarIndices">
-                <span class="navBarIndex">用户讨论</span>
-                <span class="navBarIndex">内容整理</span>
-                <span class="navBarIndex">实用工具</span>
-                <span class="navBarIndex">新人指南</span>
-                <span></span>
+                <span @click="nabBarIndexClickHandler(navBarIndexName.name)"
+                      :key="navBarIndexName.name" v-for="navBarIndexName in navBarIndicesName"
+                      class="navBarIndex">{{ navBarIndexName.name }}</span>
             </div>
             <div id="navBarButtons">
                 <div id="navBarSearchWrapper" class="navBarButtonWrapper">
@@ -25,22 +23,41 @@
             </div>
         </div>
         <mobile-menu v-if="mobileMenuDisplay"></mobile-menu>
+        <p-c-secondary-bar v-if="secondaryBarActivated" :activated-bar="activatedBarName"></p-c-secondary-bar>
     </div>
 </template>
 
 <script>
 import mobileMenu from "@/components/mobileMenu";
+import PCSecondaryBar from "@/components/PCSecondaryBar";
 
 export default {
     name: "navBar",
     components: {
-        mobileMenu
+        mobileMenu,
+        PCSecondaryBar
     },
     data() {
         return {
             mobileMenuDisplay: false,
             navBarMobileMenuTouched: false,
-            navBarMobileMenuBGStyle: "background-color:white;"
+            navBarMobileMenuBGStyle: "background-color:white;",
+            navBarIndicesName: [
+                {
+                    name: "用户讨论",
+                },
+                {
+                    name: "内容整理",
+                },
+                {
+                    name: "实用工具",
+                },
+                {
+                    name: "新人指南",
+                }
+            ],
+            activatedBarName: "",
+            secondaryBarActivated: false
         }
     },
     watch: {
@@ -49,6 +66,18 @@ export default {
                 this.$data.navBarMobileMenuBGStyle = "background-color:#D1D5DB;"
             } else {
                 this.$data.navBarMobileMenuBGStyle = "background-color:white;"
+            }
+        }
+    },
+    methods: {
+        nabBarIndexClickHandler(indexName) {
+            if (this.$data.secondaryBarActivated === false) {
+                this.$data.secondaryBarActivated = true;
+                this.$data.activatedBarName = indexName
+            } else if (this.$data.activatedBarName === indexName) {
+                this.$data.secondaryBarActivated = false;
+            } else {
+                this.$data.activatedBarName = indexName;
             }
         }
     }
@@ -98,6 +127,10 @@ export default {
         margin: 0 10px 0 10px;
         cursor: pointer;
         color: grey;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
 
         &:hover {
           color: black;
@@ -169,12 +202,12 @@ export default {
 
       #navBarMobileMenuWrapper {
         display: none;
-        .mobileWrapper();
+          .mobileWrapper();
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        -webkit-tap-highlight-color:rgba(0,0,0,0);
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       }
 
       #navBarSearchWrapper {
