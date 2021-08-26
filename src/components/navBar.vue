@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import mobileMenu from "@/components/mobileMenu";
-import PCSecondaryBar from "@/components/PCSecondaryBar";
+import mobileMenu from "./mobileMenu";
+import PCSecondaryBar from "./PCSecondaryBar";
 
 export default {
     name: "navBar",

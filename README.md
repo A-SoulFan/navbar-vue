@@ -1,4 +1,4 @@
-# asf-navbar
+# asf-navbar-vue
 
 >### 运行前安装
 >>`yarn install`
