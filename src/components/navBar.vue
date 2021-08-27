@@ -86,7 +86,8 @@ export default {
 </script>
 
 <style scoped lang="less">
-@primary-color: white;
+@mobileWidth:768px;
+@padWidth:1150px;
 #navBar {
   width: 100vw;
   height: 72px;
@@ -97,20 +98,20 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  @media (max-width: 1000px) {
+  @media (max-width: @mobileWidth) {
     height: 48px;
   }
 
   #navBarInnerWrapper {
     height: 100%;
-    width: 1230px;
+    width:@padWidth;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @media (max-width: 1270px) {
-      width: 950px;
+    @media (max-width: @padWidth) {
+      width: @mobileWidth;
     }
-    @media (max-width: 1000px) {
+    @media (max-width: @mobileWidth) {
       width: 90vw;
     }
 
@@ -119,7 +120,7 @@ export default {
     }
 
     #navBarIndices {
-      @media (max-width: 1000px) {
+      @media (max-width: @mobileWidth) {
         display: none;
       }
 
@@ -152,7 +153,7 @@ export default {
         cursor: pointer;
         height: 50px;
         width: 50px;
-        @media (max-width: 1000px) {
+        @media (max-width: @mobileWidth) {
           height: 40px;
           width: 40px;
           display: none;
@@ -166,7 +167,7 @@ export default {
 
         .navBarButton {
           height: 28.8px;
-          @media (max-width: 1000px) {
+          @media (max-width: @mobileWidth) {
             display: none;
             height: 19.2px;
           }
@@ -174,7 +175,7 @@ export default {
 
         #navBarMobileMenu {
           display: none;
-          @media (max-width: 1000px) {
+          @media (max-width: @mobileWidth) {
             display: block;
             margin: 0;
           }
@@ -182,7 +183,7 @@ export default {
 
         #navBarSearch {
           height: 28.8px;
-          @media (max-width: 1000px) {
+          @media (max-width: @mobileWidth) {
             height: 19.2px;
             display: block !important;
           }
@@ -191,7 +192,7 @@ export default {
       }
 
       .mobileWrapper {
-        @media (max-width: 1000px) {
+        @media (max-width: @mobileWidth) {
           display: flex;
           justify-content: center;
           align-items: center;
