@@ -1,41 +1,65 @@
 # asf-navbar-vue
 
->### 运行前安装
->>`yarn install`
->### 实时调试
->>`yarn serve`
->### 打包
->>`yarn build`
->### 代码检测
->>`yarn lint`
+## Usage
+
+通过包管理器安装:
+
+```bash
+# Installation with npm
+npm install asf-navbar-vue -D
+# or with yarn
+yarn add asf-navbar-vue -D
+```
+
+在项目中使用:
+
+```typescript
+// --------------- For Pure HTML ---------------------------------
+// 用`<script>`标签引入项目文件夹中index.js与vue文件夹
+// 即可在html中写入`<asf-navbar></asf-navbar>`
+
+// --------------- For Vue ---------------------------------------
+import { VueNavBar } from 'asf-navbar-vue';
+// 在`components`内添加`asfNavbar`
+// 即可在template中写入`<asf-navbar></asf-navbar>`
+// <using example here...>
+
+// --------------- For React -------------------------------------
+import { ReactNavBar } from 'asf-navbar-vue';
+
+export default () => {
+  return (
+    <div>
+      <ReactNavBar />
+    </div>
+  )
+}
+```
+
+## 开发
+
+```bash
+# 运行前安装
+yarn install
+
+# 调试
+yarn serve        # this is a shorthand of `yarn serve:vue`
+yarn serve:vue    # debug vue component
+yarn serve:react  # debug react component
+
+# 打包
+yarn build        # build for production mode, see `src/entries/main.ts`
+
+# 代码检测
+yarn lint
+
+# 查看生产环境编译设置
+yarn inspect
+```
 
 ## 项目地址
 [https://gitee.com/asoul-fan/asf-navbar-vue](https://gitee.com/asoul-fan/asf-navbar)
 
-## 安装
-```bash
-npm install asf-navbar-vue
-```
-或
-```bash
-yarn add asf-navbar-vue
-```
-
-## 使用
->纯HTML:
->>用`<script>`标签引入项目文件夹中index.js与vue文件夹
->
->>即可在html中写入`<asf-navbar></asf-navbar>`
-> 
->Vue.js:
-> 
->> 用`import asfNavbar from 'asf-navbar'`语句导入后在`components`内添加`asfNavbar`
-> 
->> 即可在template中写入`<asf-navbar></asf-navbar>`
-> 
->React.js
-> 
->> 寄了
 ## 环境
 * 使用 [Node.js 14.17.5](http://nodejs.cn/download/current/) 官网**LTS**版本
 

@@ -15,8 +15,6 @@
     "serve:vue": "ASF_VUE=1 vue-cli-service serve",
     "serve:react": "ASF_REACT=1 vue-cli-service serve",
     "build": "ASF_VUE=1 ASF_REACT=1 NODE_ENV=production vue-cli-service build",
-    "build:vue": "ASF_VUE=1 NODE_ENV=production vue-cli-service build",
-    "build:react": "ASF_REACT=1 NODE_ENV=production vue-cli-service build",
     "inspect": "ASF_REACT=1 ASF_VUE=1 NODE_ENV=production vue inspect",
     "lint": "vue-cli-service lint",
     "prepare": "husky install",
