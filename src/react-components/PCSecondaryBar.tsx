@@ -71,20 +71,20 @@ export default ({ activatedBar, ...others }: PropsType) => {
     }
   }, [activatedBar]);
 
+  console.log(activatedBarObject);
+
   return (
     <div id={styles.PCSecondaryBar} {...others}>
       <div id="navBarIndices">
-        {
-          activatedBarObject?.secondaryBars.map((bar) => {
-            <span
-              className={styles.secondaryNavBarIndex}
-              onClick={() => window.open(bar.link)}
-              key={bar.name}
-            >
-              {bar.name}
-            </span>
-          })
-        }
+        {activatedBarObject && activatedBarObject.secondaryBars.map((bar) => (
+          <span
+            className={styles.secondaryNavBarIndex}
+            onClick={() => window.open(bar.link)}
+            key={bar.name}
+          >
+            {bar.name}
+          </span>
+        ))}
       </div>
     </div>
   )
