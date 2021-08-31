@@ -2,9 +2,14 @@ import Asf from '../assets/Logo.svg';
 import Search from '../assets/search.svg';
 import User from '../assets/user.svg';
 import Menu from '../assets/menu.svg';
+import PCSecondaryBar from './PCSecondaryBar';
+import MobileMenu from './MobileMenu';
 import styles from './Navbar.module.less';
 
 export default () => {
+  console.log(PCSecondaryBar);
+  console.log(MobileMenu);
+
   return (
    <div id={styles.navBar}>
       <div id={styles.navBarInnerWrapper}>
