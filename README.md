@@ -14,11 +14,11 @@
 
 ## 安装
 ```bash
-npm install asf-navbar
+npm install asf-navbar-vue
 ```
 或
 ```bash
-yarn add asf-navbar
+yarn add asf-navbar-vue
 ```
 
 ## 使用
