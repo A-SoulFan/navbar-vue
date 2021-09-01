@@ -1,0 +1,137 @@
+@mobileWidth:768px;
+@padWidth:1150px;
+
+#navBar {
+  width: 100vw;
+  height: 72px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @media (max-width: @mobileWidth) {
+    height: 48px;
+  }
+
+  #navBarInnerWrapper {
+    height: 100%;
+    width:@padWidth;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: @padWidth) {
+      width: @mobileWidth;
+    }
+
+    @media (max-width: @mobileWidth) {
+      width: 90vw;
+    }
+
+    #logo {
+      height: 50%;
+    }
+
+    #navBarIndices {
+      @media (max-width: @mobileWidth) {
+        display: none;
+      }
+
+      .navBarIndex {
+        margin: 0 10px 0 10px;
+        cursor: pointer;
+        color: grey;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+
+    #navBarButtons {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .navBarButtonWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 25px;
+        margin: 0 10px 0 10px;
+        cursor: pointer;
+        height: 50px;
+        width: 50px;
+        @media (max-width: @mobileWidth) {
+          height: 40px;
+          width: 40px;
+          display: none;
+          border-radius: 20px;
+        }
+
+        &:hover {
+          background-color: #D1D5DB;
+        }
+
+
+        .navBarButton {
+          height: 28.8px;
+          @media (max-width: @mobileWidth) {
+            display: none;
+            height: 19.2px;
+          }
+        }
+
+        #navBarMobileMenu {
+          display: none;
+          @media (max-width: @mobileWidth) {
+            display: block;
+            margin: 0;
+          }
+        }
+
+        #navBarSearch {
+          height: 28.8px;
+          @media (max-width: @mobileWidth) {
+            height: 19.2px;
+            display: block !important;
+          }
+        }
+
+      }
+
+      .mobileWrapper {
+        @media (max-width: @mobileWidth) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 5px;
+          cursor: pointer;
+        }
+      }
+
+      #navBarMobileMenuWrapper {
+        display: none;
+        .mobileWrapper();
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+
+      #navBarSearchWrapper {
+        display: flex;
+        .mobileWrapper();
+      }
+    }
+
+  }
+}
