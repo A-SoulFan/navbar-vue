@@ -23,7 +23,7 @@
             </div>
         </div>
         <mobile-menu v-if="mobileMenuDisplay"></mobile-menu>
-        <p-c-secondary-bar v-if="secondaryBarActivated" :activated-bar="activatedBarName"></p-c-secondary-bar>
+        <p-c-secondary-bar  v-if="secondaryBarActivated" :activated-bar="activatedBarName" :bar-array="childrenBarArray"></p-c-secondary-bar>
     </div>
 </template>
 
@@ -33,6 +33,7 @@ import PCSecondaryBar from "./PCSecondaryBar";
 
 export default {
     name: "navBar",
+    props:['happy'],
     components: {
         mobileMenu,
         PCSecondaryBar
@@ -57,7 +58,49 @@ export default {
                 }
             ],
             activatedBarName: "",
-            secondaryBarActivated: false
+            secondaryBarActivated: false,
+            childrenBarArray:  [
+            {
+                elementaryBar: "用户讨论",
+                secondaryBars: [
+                    {name: "happy1", link: "https://www.baidu.com"}
+                ],
+                display:false
+            },
+            {
+                elementaryBar: "内容整理",
+                secondaryBars: [
+                    {name: "happy2", link: "https://www.baidu.com"}
+                ],
+                display:false
+            },
+            {
+                elementaryBar: "实用工具",
+                secondaryBars: [
+                    {name: "枝网查重", link: "https://www.baidu.com"},
+                    {name: "成分姬", link: "https://www.baidu.com"},
+                    {name: "表情包", link: "https://www.baidu.com"},
+                    {name: "方言词典", link: "https://www.baidu.com"},
+                    {name: "今天溜什么", link: "https://www.baidu.com"},
+                    {name: "数据分析", link: "https://www.baidu.com"},
+                ],
+                display:false
+            },
+            {
+                elementaryBar: "新人指南",
+                secondaryBars: [
+                    {name: "happy3", link: "https://www.baidu.com"}
+                ],
+                display:false
+            },
+            {
+                elementaryBar: "关于我们",
+                secondaryBars: [
+                    {name: "happy2", link: "https://www.baidu.com"}
+                ],
+                display:false
+            },
+        ],
         }
     },
     watch: {
@@ -80,7 +123,15 @@ export default {
                 this.$data.activatedBarName = indexName;
             }
         }
-    }
+    },
+    /*updated() {
+        for(let i in this.$data.childrenBarArray){
+            if(this.proj === this.$data.childrenBarArray[i].elementaryBar){
+                console.log("happy");
+                break
+            }
+        }
+    }*/
 
 }
 </script>
