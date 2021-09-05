@@ -38,15 +38,14 @@ export default () => {
 ```vue
 <template>
   <div class="parent-element">
-    <!-- bind your configurations -->
-    <nav-bar :config="conf" :proj="'实用工具'" :activate-call-back="callback" ></nav-bar>
+    <vue-nav-bar :config="conf" :proj="'实用工具'" :activate-call-back="callback" ></vue-nav-bar>
   </div>
 </template>
 <script>
-import asfNavbar from 'asf-navbar';
+import { vueNavBar } from 'asf-navbar';
   export default {
     components:{
-        asfNavbar
+        vueNavBar
     },
     data() {
       return {
