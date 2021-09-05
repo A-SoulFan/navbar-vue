@@ -22,8 +22,8 @@
                 </div>
             </div>
         </div>
-        <mobile-menu v-if="mobileMenuDisplay"></mobile-menu>
-        <p-c-secondary-bar  v-if="secondaryBarActivated" :activated-bar="activatedBarName" :bar-array="childrenBarArray"></p-c-secondary-bar>
+        <mobile-menu :bar-array="childrenBarArray" :callback="activateCallBack" v-if="mobileMenuDisplay"></mobile-menu>
+        <p-c-secondary-bar  v-if="secondaryBarActivated" :activated-bar="activatedBarName" :bar-array="childrenBarArray" :callback="activateCallBack"></p-c-secondary-bar>
     </div>
 </template>
 
@@ -33,7 +33,20 @@ import PCSecondaryBar from "./PCSecondaryBar";
 
 export default {
     name: "navBar",
-    props:['happy'],
+    props:{
+        config:{
+            type:Object,
+        },
+        proj:{
+            type:String
+        },
+        activateCallBack:{
+            type:Function,
+            default:function openInNewTab(str){
+                window.open(str)
+            }
+        }
+    },
     components: {
         mobileMenu,
         PCSecondaryBar
@@ -124,14 +137,15 @@ export default {
             }
         }
     },
-    /*updated() {
+    created() {
+        console.log(this.activateCallBack);
         for(let i in this.$data.childrenBarArray){
             if(this.proj === this.$data.childrenBarArray[i].elementaryBar){
-                console.log("happy");
+                this.childrenBarArray[i].secondaryBars = this.config.secondaryBars;
                 break
             }
         }
-    }*/
+    }
 
 }
 </script>

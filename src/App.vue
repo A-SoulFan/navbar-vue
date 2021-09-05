@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <nav-bar happy="okok"></nav-bar>
+        <nav-bar :config="conf" :proj="'实用工具'" :activate-call-back="cb" ></nav-bar>
     </div>
 
 </template>
@@ -22,10 +22,14 @@ export default {
                     {name: "成分姬", link: "https://www.baidu.com"},
                     {name: "表情包", link: "https://www.baidu.com"},
                     {name: "方言词典", link: "https://www.baidu.com"},
-                    {name: "今天溜什么", link: "https://www.baidu.com"},
                 ]
             }
 
+        }
+    },
+    methods:{
+        cb(str){
+            console.log(str);
         }
     }
 }

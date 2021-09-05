@@ -1,7 +1,7 @@
 <template>
     <div id="PCSecondaryBar">
         <div id="navBarIndices">
-            <span @click="openInNewTab(menuBar.link)"
+            <span @click="callback(menuBar.link)"
                   :key="menuBar.name" v-for="menuBar in activatedBarObject.secondaryBars"
                   class="secondaryNavBarIndex">{{ menuBar.name }}</span>
         </div>
@@ -17,7 +17,12 @@ export default {
             required:true
         },
         activatedBar:{
-            type:String
+            type:String,
+            required:true
+        },
+        callback:{
+            type:Function,
+            required: true
         }
     },
     data(){

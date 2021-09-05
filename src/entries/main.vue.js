@@ -8,12 +8,12 @@ Vue.config.productionTip = false
 
 // const customElement = wrap(Vue, navBar);
 // window.customElements.define('asf-navbar', customElement);
-import wrap from '@vue/web-component-wrapper';
+/*import wrap from '@vue/web-component-wrapper';
 import VueWebComponent from '../components/navBar';
 
 const CustomElement = wrap(Vue, VueWebComponent);
 
-window.customElements.define('asf-navbar', CustomElement);
+window.customElements.define('asf-navbar', CustomElement);*/
 
 new Vue({
     render: h => h(App),

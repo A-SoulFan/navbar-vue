@@ -1,6 +1,6 @@
 # asf-navbar-vue
 
-## Usage
+## 使用
 
 通过包管理器安装:
 
@@ -19,22 +19,58 @@ yarn add asf-navbar-vue -D
 // 即可在html中写入`<asf-navbar></asf-navbar>`
 
 // --------------- For Vue ---------------------------------------
-import { VueNavBar } from 'asf-navbar-vue';
-// 在`components`内添加`asfNavbar`
-// 即可在template中写入`<asf-navbar></asf-navbar>`
-// <using example here...>
+import { VueNavBar } from 'asf-navbar';
+// 在`components`内添加`VueNavbar`
+// 即可在template中写入`<vue-navbar></vue-navbar>`
 
 // --------------- For React -------------------------------------
-import { ReactNavBar } from 'asf-navbar-vue';
+import { ReactNavBar } from 'asf-navbar';
 
 export default () => {
   return (
     <div>
-      <ReactNavBar />
+      <ReactNavBar/>
     </div>
   )
 }
 ```
+### VUE DEMO
+```vue
+<template>
+  <div class="parent-element">
+    <!-- bind your configurations -->
+    <nav-bar :config="conf" :proj="'实用工具'" :activate-call-back="callback" ></nav-bar>
+  </div>
+</template>
+<script>
+import asfNavbar from 'asf-navbar';
+  export default {
+    components:{
+        asfNavbar
+    },
+    data() {
+      return {
+        conf: {
+          elementaryBar: "实用工具",
+          secondaryBars: [
+            {name: "枝网查重", link: "https://www.baidu.com"},
+            {name: "成分姬", link: "https://www.baidu.com"},
+            {name: "表情包", link: "https://www.baidu.com"},
+            {name: "方言词典", link: "https://www.baidu.com"},
+          ]
+        }
+      }
+    },
+    methods:{
+        callback(str){
+            window.open(str);
+            console.log(str);
+        }
+    }
+  }
+</script>
+```
+
 
 ## 开发
 
@@ -56,6 +92,14 @@ yarn lint
 # 查看生产环境编译设置
 yarn inspect
 ```
+
+## API
+|  参数   | 说明  |  类型  |  默认值  |
+|  ----  | ----  | ----  |   ----  |
+|`config`| 导航栏设置 | `Object`|   -   |
+| `proj` | 项目名 | `String`|    - |
+| `activate-call-back` | 子菜单点击后触发的回调函数 | `Function`|  `function openInNewTab(str){window.open(str)}` |
+
 
 ## 项目地址
 [https://gitee.com/asoul-fan/asf-navbar-vue](https://gitee.com/asoul-fan/asf-navbar)

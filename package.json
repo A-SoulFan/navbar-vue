@@ -1,6 +1,6 @@
 {
   "name": "asf-navbar",
-  "version": "0.2.0",
+  "version": "0.2.7",
   "author": "walker2398",
   "contributors": [
     {
@@ -8,13 +8,13 @@
       "email": "suidar@foxmail.com"
     }
   ],
-  "main": "dist/main.js",
+  "main": "src/entries/main.ts",
   "types": "dist/src/entries/main.d.ts",
   "scripts": {
     "serve": "set ASF_VUE=1 && vue-cli-service serve",
     "serve:vue": "ASF_VUE=1 vue-cli-service serve",
     "serve:react": "ASF_REACT=1 vue-cli-service serve",
-    "build": "ASF_VUE=1 ASF_REACT=1 NODE_ENV=production vue-cli-service build",
+    "build": "set ASF_VUE=1 && set ASF_REACT=1 && set NODE_ENV=production && vue-cli-service build",
     "inspect": "ASF_REACT=1 ASF_VUE=1 NODE_ENV=production vue inspect",
     "lint": "vue-cli-service lint",
     "prepare": "husky install",
@@ -23,7 +23,8 @@
   "dependencies": {
     "react": "^17.0.2",
     "vue": "^2.6.11",
-    "vue-avatar": "^2.3.3"
+    "vue-avatar": "^2.3.3",
+    "less": "^4.1.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.19",
@@ -38,7 +39,6 @@
     "react-dom": "^17.0.2",
     "typescript": "^4.4.2",
     "ts-loader": "^8.2.0",
-    "less": "^4.1.1",
     "less-loader": "^7.3.0",
     "vue-template-compiler": "^2.6.11"
   },
