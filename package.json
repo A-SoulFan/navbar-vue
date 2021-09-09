@@ -1,6 +1,6 @@
 {
   "name": "asf-navbar",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "author": "walker2398",
   "contributors": [
     {
@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "less": "^4.1.1",
+    "less-loader": "^7.3.0",
     "react": "^17.0.2",
     "vue": "^2.6.11",
     "vue-avatar": "^2.3.3"
