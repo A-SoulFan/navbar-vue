@@ -6,9 +6,9 @@
 
 ```bash
 # Installation with npm
-npm install asf-navbar-vue -D
+npm install asf-navbar -D
 # or with yarn
-yarn add asf-navbar-vue -D
+yarn add asf-navbar -D
 ```
 
 在项目中使用:
@@ -42,10 +42,10 @@ export default () => {
   </div>
 </template>
 <script>
-import { vueNavBar } from 'asf-navbar';
+import { VueNavBar } from './node_modules/asf-navbar';
   export default {
     components:{
-        vueNavBar
+        VueNavBar
     },
     data() {
       return {
