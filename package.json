@@ -1,6 +1,6 @@
 {
   "name": "asf-navbar",
-  "version": "0.2.11",
+  "version": "0.2.13",
   "author": "walker2398",
   "contributors": [
     {
@@ -9,7 +9,7 @@
     }
   ],
   "main": "src/entries/main.ts",
-  "types": "src/custom.d.ts",
+  "types": "src/entries/main.ts",
   "scripts": {
     "serve": "set ASF_VUE=1 && vue-cli-service serve",
     "serve:vue": "ASF_VUE=1 vue-cli-service serve",
