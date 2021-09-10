@@ -99,4 +99,8 @@ module.exports = {
     new VueLoaderPlugin(),
   ].filter(Boolean),
   externals: [InProEnv && nodeExternals(),].filter(Boolean),
+  optimization: {
+    minimize: InProEnv,
+    emitOnErrors: true,
+  },
 }
