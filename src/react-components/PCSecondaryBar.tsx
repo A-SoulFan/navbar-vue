@@ -71,8 +71,6 @@ export default ({ activatedBar, ...others }: PropsType) => {
     }
   }, [activatedBar]);
 
-  console.log(activatedBarObject);
-
   return (
     <div id={styles.PCSecondaryBar} {...others}>
       <div id="navBarIndices">

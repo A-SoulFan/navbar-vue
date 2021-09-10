@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Asf from '../assets/Logo.svg';
 import Search from '../assets/search.svg';
 import User from '../assets/user.svg';
@@ -5,7 +6,6 @@ import Menu from '../assets/menu.svg';
 import PCSecondaryBar from './PCSecondaryBar';
 import MobileMenu from './MobileMenu';
 import styles from './Navbar.module.less';
-import {useEffect, useState} from 'react';
 
 const menuItems: { name: string }[] = [
   {
@@ -76,10 +76,10 @@ export default () => {
           </div>
         </div>
       </div>
-        {mobileMenuDisplay && <MobileMenu />}
-        {secondaryBarActivated && (
-          <PCSecondaryBar activatedBar={activatedBarName} />
-        )}
+      {mobileMenuDisplay && <MobileMenu />}
+      {secondaryBarActivated && (
+        <PCSecondaryBar activatedBar={activatedBarName} />
+      )}
     </div>
   );
 }
