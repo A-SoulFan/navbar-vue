@@ -63,7 +63,7 @@ export default ({ activatedBar, ...others }: PropsType) => {
   const [activatedBarObject, setActivatedBarObject] = useState<MenuItem>();
 
   useEffect(() => {
-    for (let menuItem of menuBar) {
+    for (const menuItem of menuBar) {
       if (menuItem.elementaryBar === activatedBar) {
         setActivatedBarObject(menuItem);
         return

@@ -20,14 +20,12 @@ module.exports = {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
     library: {
+      name: pkg.name,
       type: 'umd',
     },
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.vue', ],
-    alias: {
-      react: path.resolve('./node_modules/react'),
-    },
   },
   module: {
     rules: [

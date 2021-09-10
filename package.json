@@ -19,7 +19,7 @@
     "build": "NODE_ENV=production yarn webpack",
     "build:react": "ASF_TARGET=react NODE_ENV=development yarn webpack",
     "build:vue": "ASF_TARGET=vue NODE_ENV=development yarn webpack",
-    "lint": "echo $(tput setaf 1)\"\n......Working In Progress......\n\"$(tput setaf 7)",
+    "lint": "yarn eslint \"src/**/*.{js,vue,tsx,ts}\"",
     "prepare": "husky install",
     "clean": "rm -rf dist/*",
     "prebuild": "yarn clean"
@@ -27,7 +27,11 @@
   "devDependencies": {
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
     "css-loader": "^6.2.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^7.17.0",
     "html-webpack-plugin": "^5.3.2",
     "less": "^4.1.1",
     "less-loader": "^10.0.1",
