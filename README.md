@@ -1,4 +1,4 @@
-# asf-navbar-vue
+# asf-navbar
 
 ## Usage
 
@@ -6,26 +6,41 @@
 
 ```bash
 # Installation with npm
-npm install asf-navbar-vue -D
+npm install asf-navbar -D
 # or with yarn
-yarn add asf-navbar-vue -D
+yarn add asf-navbar -D
 ```
 
 在项目中使用:
 
-```typescript
-// --------------- For Pure HTML ---------------------------------
-// 用`<script>`标签引入项目文件夹中index.js与vue文件夹
-// 即可在html中写入`<asf-navbar></asf-navbar>`
+```typescriptreact
+// --------------- For Pure HTML (目前版本不支持) ----------------
+// 用 `<script>` 标签引入项目文件夹中 index.js 与 vue 文件夹
+// 即可在 html 中写入 `<asf-navbar></asf-navbar>` 
 
 // --------------- For Vue ---------------------------------------
-import { VueNavBar } from 'asf-navbar-vue';
-// 在`components`内添加`asfNavbar`
-// 即可在template中写入`<asf-navbar></asf-navbar>`
-// <using example here...>
+// 在 `components` 内添加 `asfNavbar` 
+// 即可在 template 中写入 `<asf-navbar></asf-navbar>` 
+<template>
+  <div id="app">
+    <nav-bar></nav-bar>
+  </div>
+</template>
+
+<script>
+import { VueNavBar } from 'asf-navbar'
+
+export default {
+  name: 'App',
+  components: {
+    'nav-bar': VueNavBar,
+  },
+}
+</script>
+
 
 // --------------- For React -------------------------------------
-import { ReactNavBar } from 'asf-navbar-vue';
+import { ReactNavBar } from 'asf-navbar';
 
 export default () => {
   return (
@@ -38,7 +53,7 @@ export default () => {
 
 ## 开发
 
-```bash
+```shell
 # 运行前安装
 yarn install
 
@@ -77,9 +92,13 @@ yarn release:publish
 
 ## GIT提交规范
 
-* 提交前会自动启动Git Hook调用husky + `yarn lint`,若检测到有任何语法错误或typo会阻止提交。
-* 为避免全局配置中的邮箱或姓名带有盒信息，请修改全局Git配置或在具体项目根目录下使用以下命令修改Git提交信息
-* `git config user.name "xxxx"` ` git config user.email "xxxxx@xx.xx"`
+* 提交前会自动启动 Git Hook 调用 `husky` + `yarn lint`，若检测到有任何语法错误或 typo 会阻止提交。
+* 为避免全局配置中的邮箱或姓名带有盒信息，请修改全局 Git 配置或在具体项目根目录下使用以下命令修改 Git 提交信息
+
+    ```shell
+    git config user.name "xxxx"
+    git config user.email "xxxxx@xx.xx"
+    ```
 
 ## 代码规范
 
