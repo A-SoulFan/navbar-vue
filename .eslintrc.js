@@ -12,6 +12,8 @@ module.exports = {
   rules: {
     "vue/html-indent": 0,
     "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/no-this-alias": 0,
+    "@typescript-eslint/no-empty-function": 0,
   },
   plugins: [
     '@typescript-eslint',

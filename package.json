@@ -1,6 +1,6 @@
 {
-  "name": "asf-navbar",
-  "version": "0.2.0",
+  "name": "asf-navbar-react",
+  "version": "0.1.5",
   "author": "walker2398",
   "contributors": [
     {
@@ -11,7 +11,7 @@
   "main": "dist/index.js",
   "types": "dist/index.prod.d.ts",
   "files": [
-    "dist"
+    "./dist"
   ],
   "scripts": {
     "serve:react": "ASF_TARGET=react NODE_ENV=development yarn webpack serve",
@@ -19,7 +19,9 @@
     "build": "NODE_ENV=production yarn webpack",
     "build:react": "ASF_TARGET=react NODE_ENV=development yarn webpack",
     "build:vue": "ASF_TARGET=vue NODE_ENV=development yarn webpack",
-    "lint": "yarn eslint \"src/**/*.{js,vue,tsx,ts}\"",
+    "release": "yarn lint && yarn build",
+    "release:publish": "yarn release && yarn publish --access public --registry https://registry.npmjs.org",
+    "lint": "yarn eslint \"src/**/*.{js,jsx,vue,ts,tsx}\"",
     "prepare": "husky install",
     "clean": "rm -rf dist/*",
     "prebuild": "yarn clean"
