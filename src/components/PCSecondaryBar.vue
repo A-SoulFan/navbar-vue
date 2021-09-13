@@ -1,7 +1,7 @@
 <template>
     <div id="PCSecondaryBar">
         <div id="navBarIndices">
-            <span @click="openInNewTab(menuBar.link)"
+            <span @click="callback(menuBar.link)"
                   :key="menuBar.name" v-for="menuBar in activatedBarObject.secondaryBars"
                   class="secondaryNavBarIndex">{{ menuBar.name }}</span>
         </div>
@@ -12,54 +12,21 @@
 export default {
     name: "PCSecondaryBar",
     props: {
+        barArray:{
+            type:Array,
+            required:true
+        },
         activatedBar:{
-            default:"  "
+            type:String,
+            required:true
+        },
+        callback:{
+            type:Function,
+            required: true
         }
     },
     data(){
         return{
-            menuBars: [
-                {
-                    elementaryBar: "用户讨论",
-                    secondaryBars: [
-                        {name: "happy1", link: "https://www.baidu.com"}
-                    ],
-                    display:false
-                },
-                {
-                    elementaryBar: "内容整理",
-                    secondaryBars: [
-                        {name: "happy2", link: "https://www.baidu.com"}
-                    ],
-                    display:false
-                },
-                {
-                    elementaryBar: "实用工具",
-                    secondaryBars: [
-                        {name: "枝网查重", link: "https://www.baidu.com"},
-                        {name: "成分姬", link: "https://www.baidu.com"},
-                        {name: "表情包", link: "https://www.baidu.com"},
-                        {name: "方言词典", link: "https://www.baidu.com"},
-                        {name: "今天溜什么", link: "https://www.baidu.com"},
-                        {name: "数据分析", link: "https://www.baidu.com"},
-                    ],
-                    display:false
-                },
-                {
-                    elementaryBar: "新人指南",
-                    secondaryBars: [
-                        {name: "happy3", link: "https://www.baidu.com"}
-                    ],
-                    display:false
-                },
-                {
-                    elementaryBar: "关于我们",
-                    secondaryBars: [
-                        {name: "happy2", link: "https://www.baidu.com"}
-                    ],
-                    display:false
-                },
-            ],
             activatedBarObject:{
                 elementaryBar: "",
                 secondaryBars: [
@@ -67,6 +34,7 @@ export default {
                 ],
                 display:false
             },
+            menuBars:this.barArray
         }
     },
     watch:{
@@ -87,7 +55,7 @@ export default {
         openInNewTab(url){
             window.open(url);
         }
-    }
+    },
 }
 </script>
 

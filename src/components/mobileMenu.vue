@@ -5,12 +5,12 @@
             <p id="personalText">登录/注册</p>
         </div>
         <div id="menu">
-            <div :key="barName.elementaryBar" v-for="barName in this.$data.menuBars" class="menuBarWrapper">
+            <div :key="barName.elementaryBar" v-for="barName in this.barArray" class="menuBarWrapper">
                 <div @click="barName.display=!barName.display" class="elementaryBar">
                     {{ barName.elementaryBar }}
                     <img style="cursor:pointer;height: 16px;" src="../assets/plus.svg" alt="plus"/></div>
                 <div  v-if="barName.display" class="secondaryBarsWrapper">
-                    <div class="secondaryBar" :key="secondaryBarName.name" @click="openInNewTab(secondaryBarName.link)"
+                    <div class="secondaryBar" :key="secondaryBarName.name" @click="callback(secondaryBarName.link)"
                          v-for="secondaryBarName in barName.secondaryBars">
                         {{ secondaryBarName.name }}
                         <img style="position:absolute;height:16px;right: calc(5vw + 5px)" src="../assets/jump.svg" alt="jump"/>
@@ -26,59 +26,18 @@
 
 export default {
     name: "mobileMenu",
+    props:{
+        barArray:{
+            type:Array,
+            required:true
+        },
+        callback:{
+            type:Function,
+            required: true
+        }
+    },
     components: {
         // Avatar
-    },
-    data() {
-        return {
-            menuBars: [
-                {
-                    elementaryBar: "用户讨论",
-                    secondaryBars: [
-                        {name: "happy1", link: "https://www.baidu.com"}
-                    ],
-                    display:false
-                },
-                {
-                    elementaryBar: "内容整理",
-                    secondaryBars: [
-                        {name: "happy2", link: "https://www.baidu.com"}
-                    ],
-                    display:false
-                },
-                {
-                    elementaryBar: "实用工具",
-                    secondaryBars: [
-                        {name: "枝网查重", link: "https://www.baidu.com"},
-                        {name: "成分姬", link: "https://www.baidu.com"},
-                        {name: "表情包", link: "https://www.baidu.com"},
-                        {name: "方言词典", link: "https://www.baidu.com"},
-                        {name: "今天溜什么", link: "https://www.baidu.com"},
-                        {name: "数据分析", link: "https://www.baidu.com"},
-                    ],
-                    display:false
-                },
-                {
-                    elementaryBar: "新人指南",
-                    secondaryBars: [
-                        {name: "happy3", link: "https://www.baidu.com"}
-                    ],
-                    display:false
-                },
-                {
-                    elementaryBar: "关于我们",
-                    secondaryBars: [
-                        {name: "happy2", link: "https://www.baidu.com"}
-                    ],
-                    display:false
-                },
-            ]
-        }
-    },
-    methods:{
-        openInNewTab(url){
-            window.open(url);
-        }
     }
 }
 </script>

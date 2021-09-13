@@ -1,6 +1,6 @@
 # asf-navbar
 
-## Usage
+## 使用
 
 通过包管理器安装:
 
@@ -11,44 +11,55 @@ npm install asf-navbar -D
 yarn add asf-navbar -D
 ```
 
-在项目中使用:
+### React Demo
 
 ```typescriptreact
-// --------------- For Pure HTML (目前版本不支持) ----------------
-// 用 `<script>` 标签引入项目文件夹中 index.js 与 vue 文件夹
-// 即可在 html 中写入 `<asf-navbar></asf-navbar>` 
-
-// --------------- For Vue ---------------------------------------
-// 在 `components` 内添加 `asfNavbar` 
-// 即可在 template 中写入 `<asf-navbar></asf-navbar>` 
-<template>
-  <div id="app">
-    <nav-bar></nav-bar>
-  </div>
-</template>
-
-<script>
-import { VueNavBar } from 'asf-navbar'
-
-export default {
-  name: 'App',
-  components: {
-    'nav-bar': VueNavBar,
-  },
-}
-</script>
-
-
-// --------------- For React -------------------------------------
 import { ReactNavBar } from 'asf-navbar';
 
 export default () => {
   return (
     <div>
-      <ReactNavBar />
+      <ReactNavBar/>
     </div>
   )
 }
+```
+
+### Vue Demo
+
+```vue
+<template>
+  <div class="parent-element">
+    <vue-nav-bar :config="conf" :proj="'实用工具'" :activate-call-back="callback" ></vue-nav-bar>
+  </div>
+</template>
+<script>
+import { VueNavBar } from './node_modules/asf-navbar';
+  export default {
+    components:{
+        VueNavBar
+    },
+    data() {
+      return {
+        conf: {
+          elementaryBar: "实用工具",
+          secondaryBars: [
+            {name: "枝网查重", link: "https://www.baidu.com"},
+            {name: "成分姬", link: "https://www.baidu.com"},
+            {name: "表情包", link: "https://www.baidu.com"},
+            {name: "方言词典", link: "https://www.baidu.com"},
+          ]
+        }
+      }
+    },
+    methods:{
+        callback(str){
+            window.open(str);
+            console.log(str);
+        }
+    }
+  }
+</script>
 ```
 
 ## 开发
@@ -70,6 +81,14 @@ yarn lint
 # 发布至 npm
 yarn release:publish
 ```
+
+## API
+
+|  参数   | 说明  |  类型  |  默认值  |
+|  ----  | ----  | ----  |   ----  |
+|`config`| 导航栏设置 | `Object`|   -   |
+| `proj` | 项目名 | `String`|    - |
+| `activate-call-back` | 子菜单点击后触发的回调函数 | `Function`|  `function openInNewTab(str){window.open(str)}` |
 
 ## 项目地址
 
