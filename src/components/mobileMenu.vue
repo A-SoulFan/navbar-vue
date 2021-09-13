@@ -1,7 +1,7 @@
 <template>
     <div id="mobileMenu">
         <div id="personalPart">
-            <avatar username="walker2398"></avatar>
+            <!-- <avatar username="walker2398"></avatar> -->
             <p id="personalText">登录/注册</p>
         </div>
         <div id="menu">
@@ -22,12 +22,12 @@
 </template>
 
 <script>
-import Avatar from 'vue-avatar';
+// import Avatar from 'vue-avatar';
 
 export default {
     name: "mobileMenu",
     components: {
-        Avatar
+        // Avatar
     },
     data() {
         return {
