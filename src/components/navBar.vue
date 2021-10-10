@@ -154,12 +154,12 @@ export default {
 @mobileWidth:768px;
 @padWidth:1150px;
 #navBar {
-  width: 100vw;
+  // width: 100vw;
   height: 72px;
   background-color: white;
-  position: absolute;
-  top: 0;
-  left: 0;
+  // position: relative;
+  // top: 0;
+  // left: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -182,6 +182,7 @@ export default {
 
     #logo {
       height: 50%;
+      width: auto;
     }
 
     #navBarIndices {
